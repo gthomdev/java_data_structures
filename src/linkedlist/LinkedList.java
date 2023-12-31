@@ -59,7 +59,22 @@ public class LinkedList {
         }
         size--;
         return tailData;
+    }
 
-
+    private int indexOf(int data){
+        if (isEmpty()){
+            return -1;
+        }
+        int index = -1;
+        Node node = head;
+        while (node.next != null) {
+            if (node.next.data == data) {
+                index++;
+                return index;
+            }
+            node = node.next;
+            index++;
+        }
+        return -1;
     }
 }
