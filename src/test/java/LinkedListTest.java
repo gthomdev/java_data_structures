@@ -1,6 +1,5 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-
 import linkedlist.LinkedList;
 
 public class LinkedListTest {
@@ -8,7 +7,7 @@ public class LinkedListTest {
     public void addShouldReturnFirstValueWhenListNotEmpty() {
         LinkedList linkedList = new LinkedList();
         linkedList.add(10);
-        var result = linkedList.peek();
+        int result = linkedList.peek();
         assertEquals(10, result);
     }
     @Test
@@ -22,8 +21,8 @@ public class LinkedListTest {
         linkedList.add(5);
         linkedList.add(6);
         linkedList.add(7);
-        var expectedValue = 1;
-        var result = linkedList.indexOf(6);
+        int expectedValue = 1;
+        int result = linkedList.indexOf(6);
         assertEquals(expectedValue, result);
     }
 
@@ -32,14 +31,14 @@ public class LinkedListTest {
         LinkedList linkedList = new LinkedList();
         linkedList.add(5);
         linkedList.addFirst(10);
-        var result = linkedList.peek();
+        int result = linkedList.peek();
         assertEquals(10, result);
     }
 
     @Test
     public void isEmptyShouldReturnTrueWhenListHasNoItems() {
         LinkedList linkedList = new LinkedList();
-        var expectedValue = true;
+        boolean expectedValue = true;
         assertEquals(expectedValue, linkedList.isEmpty());
     }
 
@@ -47,7 +46,7 @@ public class LinkedListTest {
     public void isEmptyShouldReturnFalseWhenListHasItems() {
         LinkedList linkedList = new LinkedList();
         linkedList.add(10);
-        var expectedValue = false;
+        boolean expectedValue = false;
         assertEquals(expectedValue, linkedList.isEmpty());
     }
 
@@ -56,7 +55,7 @@ public class LinkedListTest {
         LinkedList linkedList = new LinkedList();
         linkedList.add(5);
         linkedList.addLast(10);
-        var expectedValue = 10;
+        int expectedValue = 10;
         assertEquals(expectedValue, linkedList.peekLast());
 
     }
