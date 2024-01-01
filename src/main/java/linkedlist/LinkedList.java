@@ -5,11 +5,11 @@ public class LinkedList {
     private Node tail;
     private int size;
 
-    private boolean isEmpty() {
+    public boolean isEmpty() {
         return size == 0;
     }
 
-    private void addFirst(int data) {
+    public void addFirst(int data) {
         Node newNode = new Node(data);
         if (isEmpty()) {
             head = newNode;
@@ -23,7 +23,30 @@ public class LinkedList {
         size++;
     }
 
-    private void addLast(int data) {
+    public boolean add(int data) {
+        addLast(data);
+        return true;
+    }
+
+    public int peek() {
+        if (isEmpty()) {
+            throw new RuntimeException("Cannot peek item from an empty list");
+        }
+        return head.data;
+    }
+
+    public int peekFirst() {
+        return peek();
+    }
+
+    public int peekLast() {
+        if (isEmpty()) {
+            throw new RuntimeException("Cannot peek item from an empty list");
+        }
+        return tail.data;
+    }
+
+    public void addLast(int data) {
         if (isEmpty()) {
             addFirst(data);
         }
@@ -34,7 +57,7 @@ public class LinkedList {
         size++;
     }
 
-    private int removeFirst() {
+    public int removeFirst() {
         if (isEmpty()) {
             throw new RuntimeException("Cannot remove an item from an empty list");
         }
@@ -45,7 +68,7 @@ public class LinkedList {
         return headData;
     }
 
-    private int removeLast() {
+    public int removeLast() {
         if (isEmpty()) {
             throw new RuntimeException("Cannot remove an item from an empty list");
         }
@@ -61,7 +84,7 @@ public class LinkedList {
         return tailData;
     }
 
-    private int indexOf(int data){
+    public int indexOf(int data){
         if (isEmpty()){
             return -1;
         }
