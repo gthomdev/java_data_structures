@@ -36,6 +36,7 @@ public class LinkedList {
     }
 
     public int peekFirst() {
+
         return peek();
     }
 
