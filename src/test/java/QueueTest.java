@@ -54,12 +54,4 @@ public class QueueTest {
         Queue queue = new Queue();
         assertNull(queue.peek());
     }
-
-
-
-    //element
-    //offer
-    //peek
-    //poll
-    //remove
 }
